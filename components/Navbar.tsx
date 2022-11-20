@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link key={i} href={link.href} className="text-lg font-medium">{link.title}</Link>
         ))}
       </nav>
-      <Link href="#book" className="bg-black tracking-wider text-white font-medium uppercase px-8 py-1 min-w-fit max-w-xl">
+      <Link href="#" className="bg-black tracking-wider text-white font-medium uppercase px-8 py-1 min-w-fit max-w-xl">
         Book Now
       </Link>
     </div>
