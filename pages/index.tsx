@@ -1,86 +1,325 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import LoungeDetails from '../components/LoungeDetails';
+
+import Hero from '../components/Hero';
+import KitchenDetails from '../components/KitchenDetails';
+import Main from '../components/Main';
+
+ export const images = {
+   kitchen: [
+     {
+       src: "/images/kitchen-1.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/kitchen-2.png",
+       width: 2774,
+       height: 1560,
+     },
+     {
+       src: "/images/kitchen-3.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/kitchen-4.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/kitchen-5.jpg",
+       width: 2400,
+       height: 3600,
+     },
+   ],
+   lounge: [
+
+     {
+       src: "/images/lounge-1.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-2.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-3.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/lounge-4.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-5.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-6.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/lounge-7.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/lounge-8.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/lounge-9.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-10.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-11.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-12.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-13.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-14.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-15.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/lounge-16.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/lounge-17.jpg",
+       width: 2400,
+       height: 3600,
+     },
+   ],
+   exterior: [
+     {
+       src: "/images/exterior-1.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-2.jpg",
+       width: 3022,
+       height: 2015,
+     },
+     {
+       src: "/images/exterior-3.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-4.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-5.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-6.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-7.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-8.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-9.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-10.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-11.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-12.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-13.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/exterior-front.jpg",
+       width: 3600,
+       height: 2400,
+     },
+   ],
+   bedrooms: [
+     {
+       src: "/images/dbl-bedroom.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/dbl-bedroom-2.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/dbl-bedroom-3.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/dbl-bedroom-4.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-1.jpg",
+       width: 2400,
+       height: 3600,
+     },
+     {
+       src: "/images/main-bedroom-2.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-3.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-4.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-5.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-6.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-7.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-8.jpg",
+       width: 3600,
+       height: 2400,
+     },
+     {
+       src: "/images/main-bedroom-9.jpg",
+       width: 3600,
+       height: 2469,
+     },
+     {
+       src: "/images/main-bedroom-10.jpg",
+       width: 2400,
+       height: 3600,
+     },
+   ],
+   bathroom: [
+     {
+       src: "/images/bathroom-1.jpg",
+       width: 3400,
+       height: 3600,
+     },
+     {
+       src: "/images/bathroom-2.jpg",
+       width: 3400,
+       height: 3600,
+     },
+     {
+       src: "/images/bathroom-3.jpg",
+       width: 3400,
+       height: 3600,
+     },
+     {
+       src: "/images/bathroom-4.jpg",
+       width: 3400,
+       height: 3600,
+     },
+     {
+       src: "/images/bathroom-5.jpg",
+       width: 3400,
+       height: 3600,
+     },
+     {
+       src: "/images/bathroom-6.jpg",
+       width: 3400,
+       height: 3600,
+     },
+     {
+       src: "/images/bathroom-7.jpg",
+       width: 3400,
+       height: 3600,
+     },
+   ],
+ };
 
 const Home: NextPage = () => {
+
+
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Amon's Place</title>
       </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
-    </div>
-  )
+      <Hero />
+      <Main />
+      <LoungeDetails />
+      <KitchenDetails />
+    </>
+  );
 }
 
 export default Home
