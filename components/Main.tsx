@@ -1,14 +1,17 @@
 import Image from "next/image";
+import { pt_serif } from "./Hero";
 
 const Main = () => {
   return (
-    <section className="w-full">
+    <section className={`w-full ${pt_serif.className}`}>
       <div className="grid grid-cols-2">
         <div className="col-span-2 md:col-span-1 p-10 lg:p-24 flex flex-col justify-center">
           <h2 className="font-medium text-black uppercase text-lg md:text-2xl lg:text-5xl">
             Entire cottage hosted by Benedict
           </h2>
-          <p className="text-lg my-3 font-semibold">4 guests - 2 bedrooms - 3 beds - 1 bath</p>
+          <p className="text-lg my-3 font-semibold">
+            4 guests - 2 bedrooms - 3 beds - 1 bath
+          </p>
 
           <p className="text-base font-medium mt-2">
             We have self checking available and you will have a private

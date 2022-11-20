@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({setOpen, open}: {setOpen: (arg0:boolean) => void, open:boolean}) => {
 
   const links = [
     {
@@ -28,9 +28,9 @@ const Navbar = () => {
           <Link key={i} href={link.href} className="text-lg font-medium">{link.title}</Link>
         ))}
       </nav>
-      <Link href="#" className="bg-black tracking-wider text-white font-medium uppercase px-8 py-1 min-w-fit max-w-xl">
+      <button onClick={() => setOpen(true)} className="bg-black tracking-wider text-white font-medium uppercase px-8 py-1 min-w-fit max-w-xl">
         Book Now
-      </Link>
+      </button>
     </div>
   </header>;
 };

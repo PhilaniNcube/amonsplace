@@ -3,13 +3,17 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { useState } from "react";
 import { images } from "../pages";
+import { pt_serif } from "./Hero";
 
 const LoungeDetails = () => {
 
   let [index, setIndex] = useState(0)
 
   return (
-    <section className="grid grid-cols-2" id="living-room">
+    <section
+      className={`grid grid-cols-2 ${pt_serif.className}`}
+      id="living-room"
+    >
       <div className="col-span-2 md:col-span-1 overflow-hidden">
         <MotionConfig transition={{ duration: 0.9, ease: [0.32, 0.72, 0, 1] }}>
           <div className="bg-black">
@@ -64,7 +68,9 @@ const LoungeDetails = () => {
         </MotionConfig>
       </div>{" "}
       <div className="col-span-2 md:col-span-1 p-10 md:p-20 flex flex-col justify-center">
-        <h2 className="text-2xl font-medium uppercase">Spacious Lounge/Living Room</h2>
+        <h2 className="text-2xl font-medium uppercase">
+          Spacious Lounge/Living Room
+        </h2>
         <ul className="text-slate-700 text-lg list-disc">
           <li>Flat Screen TV</li>
           <li>WiFi 24/7</li>
