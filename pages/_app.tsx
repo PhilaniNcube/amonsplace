@@ -4,6 +4,7 @@ import { Fragment, useState } from 'react';
 import {AnimatePresence} from 'framer-motion'
 import Navbar from '../components/Navbar';
 import BookingModal from '../components/BookingModal';
+import Footer from '../components/Footer';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Navbar setOpen={setOpen} open={open} />
         {open && <BookingModal setOpen={setOpen} />}
         <Component {...pageProps} />
+        <Footer />
       </AnimatePresence>
     </Fragment>
   );
